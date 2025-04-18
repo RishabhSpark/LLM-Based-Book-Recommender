@@ -1,0 +1,36 @@
+name: Run Book Recommender Pipeline
+
+on:
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: "0 12 * * *"  # Every day at 12:00 UTC
+  push:
+    paths:
+      - "**/*.py"
+      - "pyproject.toml"
+      - "poetry.lock"
+      - ".github/workflows/run_pipeline.yml"
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.10  # Adjust if needed
+
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+    - name: Install dependencies
+      run: poetry install
+
+    - name: Run pipeline
+      run: poetry run book-pipeline
