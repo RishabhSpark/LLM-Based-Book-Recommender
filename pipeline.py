@@ -3,6 +3,7 @@ from src.vectorstore import build_vectorstore
 from src.retriever import retrieve_semantic_recommendations
 from src.classifier import ZeroShotBookClassifier
 from src.category_mapper import map_categories
+from src.sentiment.analyzer import analyze_book_emotions
 
 def run_pipeline():
     print("Starting book recommender pipeline...")
@@ -35,8 +36,15 @@ def run_pipeline():
     classifier = ZeroShotBookClassifier()
     cleaned_df = classifier.fill_missing_categories(cleaned_df)
 
-    cleaned_path = 'data/preprocessed/'
-    cleaned_df.to_csv(cleaned_path, index=False)
+    cats_path = 'data/preprocessed/books_with_cats.csv'
+    cleaned_df.to_csv(cats_path, index=False)
+
+    print("Running sentiment analysis...")
+    emotion_output_path = 'data/preprocessed/books_with_emotions.csv'
+    final_df = analyze_book_emotions(cats_path, emotion_output_path)
+    print("Sentiment analysis complete.")
+
+    print("Pipeline completed successfully.")
 
 if __name__ == "__main__":
     run_pipeline()

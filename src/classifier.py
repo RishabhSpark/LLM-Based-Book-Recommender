@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from transformers import pipeline
 from tqdm import tqdm
-from src.category_mapper import FICTION_CATEGORIES
+from src.config import FICTION_CATEGORIES
 
 
 class ZeroShotBookClassifier:

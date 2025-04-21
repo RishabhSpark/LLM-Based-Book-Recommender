@@ -1,21 +1,22 @@
 import pandas as pd
+from config import CATEGORY_MAPPING
 
-CATEGORY_MAPPING = {
-    'Fiction': "Fiction",
-    'Juvenile Fiction': "Children's Fiction",
-    'Biography & Autobiography': "Nonfiction",
-    'History': "Nonfiction",
-    'Literary Criticism': "Nonfiction",
-    'Philosophy': "Nonfiction",
-    'Religion': "Nonfiction",
-    'Comics & Graphic Novels': "Fiction",
-    'Drama': "Fiction",
-    'Juvenile Nonfiction': "Children's Nonfiction",
-    'Science': "Nonfiction",
-    'Poetry': "Fiction"
-}
+# CATEGORY_MAPPING = {
+#     'Fiction': "Fiction",
+#     'Juvenile Fiction': "Children's Fiction",
+#     'Biography & Autobiography': "Nonfiction",
+#     'History': "Nonfiction",
+#     'Literary Criticism': "Nonfiction",
+#     'Philosophy': "Nonfiction",
+#     'Religion': "Nonfiction",
+#     'Comics & Graphic Novels': "Fiction",
+#     'Drama': "Fiction",
+#     'Juvenile Nonfiction': "Children's Nonfiction",
+#     'Science': "Nonfiction",
+#     'Poetry': "Fiction"
+# }
 
-FICTION_CATEGORIES = ["Fiction", "Nonfiction"]
+# FICTION_CATEGORIES = ["Fiction", "Nonfiction"]
 
 def map_categories(books_df: pd.DataFrame) -> pd.DataFrame:
     """Maps the original book categories to simplified categories.
