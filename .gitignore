@@ -175,3 +175,6 @@ cython_debug/
 
 # Chroma db
 /chroma_db/
+
+# Gradio
+.gradio/
