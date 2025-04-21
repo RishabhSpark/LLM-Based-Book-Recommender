@@ -33,5 +33,6 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.scripts]
 book-pipeline = "pipeline:run_pipeline"
 
-[tool.poetry.packages]
-include = ["src"]
+packages = [
+    { include = "src" }
+]
