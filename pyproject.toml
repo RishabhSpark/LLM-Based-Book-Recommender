@@ -1,4 +1,4 @@
-[tool.poetry]
+[Project]
 name = "llm-novel-recommendation-system"
 version = "0.1.0"
 description = ""
