@@ -17,11 +17,6 @@ books = pd.read_csv("data/preprocessed/books_with_emotions.csv")
 
 # Thumbnails
 books["large_thumbnail"] = books["thumbnail"] + "&fife=w800"
-books["large_thumbnail"] = np.where(
-    books["large_thumbnail"].isna(),
-    "cover-not-found.jpg",
-    books["large_thumbnail"],
-)
 
 loader = TextLoader("data/preprocessed/tagged_descriptions.txt", encoding='utf-8')
 raw_documents = loader.load()
