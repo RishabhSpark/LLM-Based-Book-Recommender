@@ -35,7 +35,8 @@ def run_pipeline():
     classifier = ZeroShotBookClassifier()
     cleaned_df = classifier.fill_missing_categories(cleaned_df)
 
-    cleaned_df.to_csv(output_path, index=False)
+    cleaned_path = 'data/preprocessed/'
+    cleaned_df.to_csv(cleaned_path, index=False)
 
 if __name__ == "__main__":
     run_pipeline()
