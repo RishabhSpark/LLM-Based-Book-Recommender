@@ -41,10 +41,11 @@ def run_pipeline():
 
     print("Running sentiment analysis...")
     emotion_output_path = 'data/preprocessed/books_with_emotions.csv'
-    final_df = analyze_book_emotions(cats_path, emotion_output_path)
+    books_with_emotions = analyze_book_emotions(cleaned_df)
+    books_with_emotions.to_csv(emotion_output_path, index=False)
     print("Sentiment analysis complete.")
 
     print("Pipeline completed successfully.")
 
-if __name__ == "__main__":
-    run_pipeline()
+# if __name__ == "__main__":
+#     run_pipeline()

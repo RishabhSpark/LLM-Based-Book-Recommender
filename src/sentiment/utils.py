@@ -1,6 +1,6 @@
 import numpy as np
 from typing import List, Dict
-from config import EMOTION_LABELS
+from .config import EMOTION_LABELS
 
 def calculate_max_emotion_scores(predictions: List[List[Dict]]) -> Dict[str, float]:
     per_emotion_scores = {label: [] for label in EMOTION_LABELS}

@@ -1,8 +1,8 @@
 import pandas as pd
 from tqdm import tqdm
 
-from config import get_emotion_classifier, EMOTION_LABELS
-from utils import calculate_max_emotion_scores
+from .config import get_emotion_classifier, EMOTION_LABELS
+from .utils import calculate_max_emotion_scores
 
 def analyze_book_emotions(books_df: pd.DataFrame) -> pd.DataFrame:
     classifier = get_emotion_classifier()
@@ -20,4 +20,4 @@ def analyze_book_emotions(books_df: pd.DataFrame) -> pd.DataFrame:
     emotions_df = pd.DataFrame(emotion_scores)
     emotions_df["isbn13"] = isbn
 
-    return pd.merge(books_df, emotions_df, on="isbn13")
+    return pd.merge(books_df, emotions_df, on="isbn13") 
