@@ -1,4 +1,4 @@
-# LLM-Based Book Recommender CLI
+# LLM-Based Book Recommender
 
 This is an AI-powered Book Recommendation System that leverages semantic search, zero-shot classification, and emotion analysis to suggest books based on natural language queries. It provides intelligent recommendations not just by keywords or genres, but by understanding the deeper meaning and emotional tone of the query.
 
